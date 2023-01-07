@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-white: #fff;
+    --color-black: #000;
+
+    --color-primary-1: #f55f8d;
+    --color-primary-2: #f8ae56;
+
+    --color-text-dark: #262626;
+    --color-text-light: #636363;
+
+    --height-header: 140px;
+}
+
+body,
+html {
+    color: var(--color-text-light);
+    font-family: Roboto, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container-full {
+    width: 100%;
+}
+
+/* TYPOGRAPHY 
+===============================================================*/
+.heading__primary {
+    font-size: 70px;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    margin-bottom: 20px;
+}
+
+.heading__primary-decs {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--color-primary-1);
+}
+
+.heading__secondary-large {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
+
+.heading__secondary-standard {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin: 15px 0;
+}
+
+.heading__secondary-small {
+    font-size: 1.375rem;
+    font-weight: 800;
+    color: var(--color-text-dark);
+    line-height: 26px;
+    margin-bottom: 5px;
+}
+
+
+/* HEADER 
+===============================================================*/
+.header {
+    height: var(--height-header);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.header__nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.header__nav ul li {
+    cursor: pointer;
+}
+
+.header__nav ul li a {
+    color: var(--color-text-dark);
+    font-size: 15px;
+    font-weight: 500;
+    transition: all .5s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all .2s;
+}
+
+.header__nav ul li:hover a {
+    animation: UpToDown .3s ;
+    color: var(--color-primary-1);
+}
+
+.header__nav ul li a i {
+    font-size: 8px;
+}
+
+@keyframes UpToDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    51% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
