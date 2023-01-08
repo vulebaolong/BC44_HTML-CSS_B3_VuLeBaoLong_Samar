@@ -21,6 +21,11 @@ body,
 html {
     color: var(--color-text-light);
     font-family: Roboto, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    position: relative;
 }
 
 .container {
@@ -70,11 +75,33 @@ html {
     margin-bottom: 5px;
 }
 
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-15 {
+    font-size: 15px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
 
 /* HEADER 
 ===============================================================*/
-.header {
+.header-section {
+    position: absolute;
+    width: 100%;
     height: var(--height-header);
+    display: flex;
+    align-items: center;
+}
+
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,22 +127,65 @@ html {
     color: var(--color-text-dark);
     font-size: 15px;
     font-weight: 500;
-    transition: all .5s;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 5px;
-    transition: all .2s;
+    transition: all 0.2s;
 }
 
 .header__nav ul li:hover a {
-    animation: UpToDown .3s ;
+    animation: UpToDown 0.3s;
     color: var(--color-primary-1);
 }
 
 .header__nav ul li a i {
     font-size: 8px;
 }
+
+/* HERO 
+===============================================================*/
+.hero-section {
+    background-image: url(../img/pic2.png);
+    background-position: top;
+    background-size: 100%;
+}
+.hero {
+    display: flex;
+    padding-top: var(--height-header);
+}
+
+.hero__left {
+    padding-top: 100px;
+    padding-right: 70px;
+}
+
+.hero__left-list {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hero__left-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero__left-item i {
+    background: linear-gradient(
+        to right,
+        var(--color-primary-1) 0,
+        var(--color-primary-2) 71%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+}
+
+/* keyframes 
+===============================================================*/
 
 @keyframes UpToDown {
     0% {

@@ -1,7 +1,7 @@
 .btn,
 .btn:link,
 .btn:visited {
-    padding: 20px 35px;
+    display: inline-block;
 
     text-transform: uppercase;
     text-decoration: none;
@@ -9,14 +9,18 @@
     font-weight: 500;
     line-height: 1.2;
 
-    background-image: linear-gradient(to right,
-            var(--color-primary-1) 0,
-            var(--color-primary-2) 51%);
+    background-image: linear-gradient(
+        to right,
+        var(--color-primary-1) 0,
+        var(--color-primary-2) 51%
+    );
     background-size: 200%;
     border: 1px solid transparent;
-    transition: all .5s;
+    transition: all 0.5s;
     border-radius: 30px;
     color: #fff;
     cursor: pointer;
     outline: 0;
+
+    padding: 20px 35px;
 }
