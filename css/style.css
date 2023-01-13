@@ -6,9 +6,11 @@
 
 :root {
     --color-white: #fff;
+    --color-white-2: #e1e1f0;
     --color-black: #000;
 
     --color-primary-1: #f55f8d;
+    --color-primary-1-1: #feeff3;
     --color-primary-2: #f8ae56;
     --color-gradient-primary: linear-gradient(
         to right,
@@ -409,12 +411,17 @@ body {
     position: absolute;
     content: "";
     top: 0;
-    left: 0;
+    left: -90%;
     width: 50%;
     height: 100%;
     background-image: var(--color-gradient-white);
     z-index: 1;
-    transform: skewX(330deg) translateX(-140%);
+    transform: skewX(335deg);
+    transition: all 0.75s;
+}
+
+.portfolio__img:hover::before {
+    left: 120%;
 }
 
 .portfolio__img:hover img {
@@ -430,6 +437,7 @@ body {
     opacity: 1;
     visibility: visible;
     transform: translate(0, 0);
+    cursor: pointer;
 }
 
 .portfolio__text {
@@ -510,6 +518,108 @@ body {
     visibility: hidden;
     transition: all 0.75s;
     transform: translate(20px, -20px);
+}
+
+/* PLAN 
+===============================================================*/
+.plan-section {
+    padding: 100px 0;
+    background-image: url(../img/bg16.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.plan {
+    text-align: center;
+}
+
+.plan__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.plan__item {
+    background-color: var(--color-white);
+    padding: 50px 70px;
+    box-shadow: var(--box-shadow);
+    border-radius: 12px;
+    transition: all 0.5s;
+
+    /* cách 2
+    tăng size hình lên để hình biết mất */
+    background-image: url(../img/br.png);
+    background-position: center;
+    background-size: 103%;
+    background-repeat: no-repeat;
+
+    /* cách 1 
+    lặp lại border image lên số cao
+    image border nhỏ dần và mất*/
+    /* border: 3px solid transparent;
+    border-image: url(../img/br.png) 1 round; */
+}
+
+.plan__item:hover {
+    /* cách 1
+    lặp lại border image giảm xuống 1 hiện nguyên hình border*/
+    /* border-image: url(../img/br.png) 1 round; */
+
+    /* cách 2
+    giảm nền xuống 100% hiện nguyên hình */
+    background-size: 100%;
+}
+
+.plan__title {
+    border-bottom: 1px solid var(--color-white-2);
+}
+
+.plan__img {
+    padding: 0 50px;
+}
+
+.plan__img img {
+    width: 100%;
+    display: block;
+}
+
+.plan__price span:nth-child(1) {
+    color: var(--color-primary-2);
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.plan__price span:nth-child(2) {
+    color: var(--color-text-dark);
+    font-weight: 600;
+}
+
+.plan__content {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+
+.plan__content li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.plan__content li a {
+    text-decoration: none;
+}
+
+.plan__content li i {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: var(--color-primary-1-1);
+    color: var(--color-primary-1);
+    font-size: 14px;
 }
 /* keyframes 
 ===============================================================*/
