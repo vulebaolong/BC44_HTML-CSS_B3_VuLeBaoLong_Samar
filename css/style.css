@@ -538,7 +538,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 50px;
 }
 
 .plan__item {
@@ -548,28 +548,33 @@ body {
     border-radius: 12px;
     transition: all 0.5s;
 
-    /* cách 2
-    tăng size hình lên để hình biết mất */
-    background-image: url(../img/br.png);
-    background-position: center;
-    background-size: 103%;
-    background-repeat: no-repeat;
-
     /* cách 1 
     lặp lại border image lên số cao
-    image border nhỏ dần và mất*/
-    /* border: 3px solid transparent;
-    border-image: url(../img/br.png) 1 round; */
+    image border nhỏ dần và mất
+    không bị anh hưởng khi thay đổi kích thước đáp ứng responsive*/
+    border: 3px solid transparent;
+    border-image: url(../img/br.png) 100 round;
+
+    /* cách 2
+    tăng size hình lên để hình biết mất 
+    bị lệch khi thay đổi chiều cao không đá ứng responsive*/
+    /* background-image: url(../img/br.png);
+    background-position: center;
+    background-size: 103%;
+    background-repeat: no-repeat; */
 }
 
 .plan__item:hover {
     /* cách 1
-    lặp lại border image giảm xuống 1 hiện nguyên hình border*/
-    /* border-image: url(../img/br.png) 1 round; */
-
+    lặp lại border image giảm xuống 1 hiện nguyên hình border
+    đáp ứng responsive*/
+    border-image: url(../img/br.png) 1 round;
     /* cách 2
-    giảm nền xuống 100% hiện nguyên hình */
-    background-size: 100%;
+    
+    giảm nền xuống 100% hiện nguyên hình 
+    không đá ứng responsive**/
+    /* background-size: 100%;
+    background-position: center; */
 }
 
 .plan__title {
