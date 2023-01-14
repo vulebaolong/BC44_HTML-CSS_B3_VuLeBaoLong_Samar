@@ -626,6 +626,64 @@ body {
     color: var(--color-primary-1);
     font-size: 14px;
 }
+
+/* TESTIMONIAL 
+===============================================================*/
+.testimonial-section {
+    padding: 100px 0;
+}
+.testimonial {
+    text-align: center;
+}
+
+.testimonial__thumb {
+    outline: 2px solid red;
+    width: 50%;
+    margin: 0 auto;
+    padding: 40px 0 50px;
+}
+
+.testimonial__thumb > .swiper-wrapper {
+    /* display: flex; */
+}
+
+.testimonial__thumb-img {
+    border-radius: 50%;
+    width: 60%;
+}
+.testimonial__bd {
+    position: relative;
+    background-color: var(--color-primary-1);
+    height: 36px;
+    width: 50px;
+    margin: 0 auto;
+    top: -9px;
+    z-index: -1;
+}
+.testimonial__bd::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/pattern12.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+}
+
+.testimonial__thumb-img img {
+    width: 100%;
+    border-radius: 50%;
+    border: 6px solid var(--color-primary-1);
+    display: block;
+}
+
+.swiper-slide-thumb-active {
+    outline: 2px solid red;
+}
+
 /* keyframes 
 ===============================================================*/
 

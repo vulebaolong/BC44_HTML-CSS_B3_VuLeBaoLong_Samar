@@ -26,6 +26,12 @@
             rel="stylesheet"
         />
 
+        <!-- SWIPER -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+        />
+
         <!-- STYLE CSS -->
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="./css/btn.css" />
@@ -576,6 +582,90 @@
                     </div>
                 </div>
             </section>
+
+            <section class="testimonial-section">
+                <div class="container-full">
+                    <div class="testimonial">
+                        <div class="testimonial__text">
+                            <p class="heading__primary-decs">Testimonial</p>
+                            <h2 class="heading__primary">
+                                What Our Clients Say's
+                            </h2>
+                        </div>
+                        <div class="testimonial__content">
+                            <div class="testimonial__thumb swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="testimonial__thumb-img">
+                                            <img src="./img/pic1_4.jpg" />
+                                            <div class="testimonial__bd"></div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial__thumb-img">
+                                            <img src="./img/pic2_3.jpg" />
+                                            <div class="testimonial__bd"></div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial__thumb-img">
+                                            <img src="./img/pic3_3.jpg" />
+                                            <div class="testimonial__bd"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial__slider swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="https://swiperjs.com/demos/images/nature-1.jpg"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="https://swiperjs.com/demos/images/nature-2.jpg"
+                                        />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="https://swiperjs.com/demos/images/nature-3.jpg"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8.4.5/swiper-bundle.min.js"></script>
+        <script>
+            const testimonialThumb = new Swiper(".testimonial__thumb", {
+                spaceBetween: 10,
+                slidesPerView: 3,
+                centeredSlides: true,
+                freeMode: true,
+                autoplay: true,
+                loop: true,
+                speed: 3000,
+            });
+
+            const testimonialSlider = new Swiper(".testimonial__slider", {
+                spaceBetween: 10,
+                autoplay: true,
+                loop: true,
+                speed: 3000,
+                thumbs: {
+                    swiper: testimonialThumb,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+        </script>
     </body>
 </html>
