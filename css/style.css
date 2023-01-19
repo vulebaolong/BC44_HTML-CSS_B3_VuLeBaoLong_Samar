@@ -304,6 +304,13 @@ body {
     line-height: 1;
 }
 
+.index__number p {
+    color: var(--color-primary-1);
+    font-size: 65px;
+    font-weight: 800;
+    line-height: 1;
+}
+
 .index__icon {
     --wh-icon: 80px;
     display: flex;
