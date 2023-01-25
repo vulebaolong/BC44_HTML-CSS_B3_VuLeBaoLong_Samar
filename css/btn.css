@@ -9,18 +9,18 @@
     font-weight: 500;
     line-height: 1.2;
 
-    background-image: linear-gradient(
-        to right,
-        var(--color-primary-1) 0,
-        var(--color-primary-2) 51%
-    );
-    background-size: 200%;
+    background-image: var(--color-gradient-primary);
+    background-size: 240%;
+    background-position: 5%;
     border: 1px solid transparent;
     transition: all 0.5s;
     border-radius: 30px;
     color: #fff;
     cursor: pointer;
     outline: 0;
-
     padding: 20px 35px;
+}
+
+.btn:hover {
+    background-position: 60%;
 }

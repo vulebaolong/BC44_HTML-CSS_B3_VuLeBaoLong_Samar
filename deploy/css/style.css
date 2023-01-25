@@ -18,8 +18,10 @@
     --color-gradient-primary: linear-gradient(
         to right,
         var(--color-primary-1) 0,
-        var(--color-primary-2) 51%,
-        var(--color-primary-1) 100%
+        var(--color-primary-2) 40%,
+        var(--color-primary-1) 80%,
+        var(--color-white) 81%,
+        var(--color-white) 100%
     );
     --color-gradient-white: linear-gradient(
         to right,
@@ -63,6 +65,7 @@ html {
     font-family: Roboto, sans-serif;
     font-size: 16px;
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -304,6 +307,18 @@ body {
     line-height: 1;
 }
 
+.index__number {
+    display: flex;
+    gap: 20px;
+}
+
+.index__number p {
+    color: var(--color-primary-1);
+    font-size: 65px;
+    font-weight: 800;
+    line-height: 1;
+}
+
 .index__icon {
     --wh-icon: 80px;
     display: flex;
@@ -411,11 +426,32 @@ body {
     padding: 0 20px;
     box-shadow: var(--box-shadow);
     border-radius: 10px;
-    background-color: var(--color-white);
+    background-image: var(--color-gradient-primary);
+    background-size: 540%;
+    background-position: 100%;
+    transition: all 0.5s ease-in-out;
 }
 
-.features__item:nth-child(even) {
+.features__item:hover {
+    background-size: 300%;
+    background-position: 60%;
+}
+
+.features__item:hover i,
+.features__item:hover p,
+.features__item:hover h3 {
+    color: var(--color-white);
+}
+
+.features__list div:nth-child(even) .features__item {
     margin-left: auto;
+}
+
+/* .features__item, */
+.features__item i,
+.features__item p,
+.features__item h3 {
+    transition: all 0.5s;
 }
 
 .features__item i {
@@ -547,7 +583,8 @@ body {
     position: absolute;
     padding: 10px 15px;
     background-image: var(--color-gradient-primary);
-    background-size: 200%;
+    background-size: 240%;
+    background-position: 5%;
     z-index: 1;
     border-radius: 5px;
     right: 20px;
@@ -557,6 +594,10 @@ body {
     visibility: hidden;
     transition: all 0.75s;
     transform: translate(20px, -20px);
+}
+
+.portfolio__view:hover {
+    background-position: 60%;
 }
 
 /* PLAN 
@@ -868,7 +909,7 @@ body {
 }
 
 .blog__item {
-    padding: 16px;
+    padding: 16px 20px;
 }
 
 .blog__box p:nth-child(1) {
@@ -878,13 +919,19 @@ body {
     color: var(--color-white);
     padding: 10px 30px;
     background-image: var(--color-gradient-primary);
-    background-size: 200%;
+    background-size: 240%;
+    background-position: 5%;
     border-radius: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: fit-content;
     line-height: 29px;
+    transition: all 0.3s;
+}
+
+.blog__box p:nth-child(1):hover {
+    background-position: 60%;
 }
 
 .blog__info {
@@ -893,6 +940,8 @@ body {
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     border-top: 1px solid var(--color-white-2);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .blog__info i {
@@ -912,13 +961,53 @@ body {
     margin-right: 20px;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+    --wh: 30px;
+    width: var(--wh);
+    height: var(--wh);
+    border-radius: 50%;
+    background-image: var(--color-gradient-primary);
+    background-size: 240%;
+    background-position: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.7s;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-position: 60%;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+    right: 0;
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+    left: 0;
+}
+
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    color: var(--color-primary-1);
+    color: var(--color-white);
+    width: var(--wh);
+    height: var(--wh);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .blog__content .swiper-pagination span {
     background-color: var(--color-primary-1);
+}
+
+.blog__content {
+    padding: 0 20px;
 }
 
 /* FOOTTER 
@@ -1002,6 +1091,32 @@ ion-icon {
     justify-content: space-between;
 }
 
+.footer__list a {
+    position: relative;
+    transition: all 0.3s;
+}
+
+.footer__list li:not(:first-child) a::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-image: var(--color-gradient-primary);
+    background-size: 240%;
+    background-position: 5%;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer__list li:not(:first-child) a:hover::after {
+    width: 100%;
+}
+
+.footer__list li:not(:first-child) a:hover {
+    color: var(--color-white);
+}
+
 .footer__list li {
     display: flex;
     align-items: center;
@@ -1021,28 +1136,34 @@ ion-icon {
     position: relative;
 }
 
-.footer__list li:nth-child(1) h3::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 20%;
-    height: 10%;
-    background-image: var(--color-gradient-primary);
-    background-size: 200%;
-    border-radius: 6px;
-}
-
+.footer__list li:nth-child(1) h3::before,
 .footer__list li:nth-child(1) h3::after {
     content: "";
     position: absolute;
     bottom: 0;
-    bottom: 0;
-    left: 25%;
-    width: 50%;
     height: 10%;
     background-image: var(--color-gradient-primary);
-    background-size: 200%;
+    background-size: 240%;
+    background-position: 5%;
     border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.footer__list li:nth-child(1) h3::before {
+    width: 20%;
+}
+
+.footer__list li:nth-child(1) h3::after {
+    left: 25%;
+    width: 50%;
+}
+
+.footer__list li:nth-child(1) h3:hover::before {
+    background-position: 100%;
+}
+
+.footer__list li:nth-child(1) h3:hover::after {
+    background-position: 157%;
 }
 
 .footer__content .footer__list:nth-child(1) i {
