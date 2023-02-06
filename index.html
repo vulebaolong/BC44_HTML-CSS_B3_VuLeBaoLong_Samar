@@ -61,8 +61,12 @@
     </head>
 
     <body>
+        <!-- header-section padding trên dưới để canh khoảng cách giuawx các phần -->
         <header class="header-section">
-            <div class="container">
+            <!-- container dùng căn giữa nội dung vào giữa trang
+            thiết lập width 80 min-width để có độ rộng
+        thiết lập margin 0 auto để canh giữa -->
+            <div class="container">                
                 <div class="header">
                     <div class="header__logo">
                         <img src="./img/logo-2.png" alt="logo samar" />
@@ -1264,7 +1268,7 @@
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
                 },
-            });
+            })
 
             const testimonialThumb = new Swiper(".testimonial__thumb", {
                 spaceBetween: 10,
@@ -1274,7 +1278,7 @@
                 autoplay: true,
                 loop: true,
                 speed: 3000,
-            });
+            })
 
             const testimonialSlider = new Swiper(".testimonial__slider", {
                 spaceBetween: 10,
@@ -1288,13 +1292,13 @@
                     el: ".swiper-pagination",
                     clickable: true,
                 },
-            });
+            })
         </script>
 
         <!-- AOS -->
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
-            AOS.init({ once: true });
+            AOS.init({ once: true })
         </script>
 
         <!-- LIGHT GALLERY -->
@@ -1316,7 +1320,7 @@
                 showZoomInOutIcons: true,
                 actualSize: false,
                 exThumbImage: "data_thumb_image",
-            });
+            })
         </script>
 
         <script type="module" src="./js/index.js"></script>
